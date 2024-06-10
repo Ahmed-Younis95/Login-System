@@ -1,0 +1,43 @@
+<!-- Assignment 11 -->
+<!-- Login System -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./style/all.min.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./style/bootstrap.min.css">
+
+    <!-- main style -->
+    <link rel="stylesheet" href="./style/style.css" />
+
+  </head>
+  <body>
+    <div class="container my-5 text-center">
+      <div class="group m-auto w-75 p-5">
+          <h1>Smart Login System</h1>
+
+          <input id="signupName" class="form-control my-3" placeholder="Enter your name" type="text" spellcheck="false" data-ms-editor="true">
+          <input id="signupEmail" class="form-control my-3" placeholder="Enter your email" type="email">
+
+          <input id="signupPassword" class="form-control my-3" placeholder="Enter  password" type="password">
+          <p id="exist"></p>
+
+          <button onclick=" signUp()" class="btn btn-outline-info w-100 my-3">Sign Up</button>
+          <p class="text-white">You have an account? <a class="anchor-hover text-white" href="index.html">Sign In</a></p>
+      </div>
+  </div>
+
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

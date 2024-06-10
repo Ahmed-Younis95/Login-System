@@ -3,7 +3,7 @@
 
 var user = {name:'', email:'', password:''};
 var userList = [];
-var userLogged
+var userLogged;
 var signinEmail = document.getElementById('signinEmail');
 var signinPassword = document.getElementById('signinPassword');
 var incorrect = document.getElementById('incorrect');
@@ -27,6 +27,7 @@ function login(){
         }else if(!passwordRegex.test(signinPassword.value)){
             incorrect.innerHTML = 'invalid password';
         }else{
+            var emailRegisted = 0;
             for (let i = 0; i < userList.length; i++) {
                 if(userList[i].email == signinEmail.value && userList[i].password == signinPassword.value){
                     user = {
@@ -38,11 +39,15 @@ function login(){
                     userLogged = [user];
                     localStorage.setItem('userLogged', JSON.stringify(userLogged));
                     location.replace("home.html");
+                    emailRegisted = 1;
+                    break;
                 }else if(userList[i].email == signinEmail.value && userList[i].password != signinPassword.value){
                     incorrect.innerHTML = 'incorrect password';
                 }
             }
-            incorrect.innerHTML = 'email not register';
+            if (emailRegisted == 0){
+                incorrect.innerHTML = 'email not register';
+            }
         }
 }
 
@@ -77,7 +82,7 @@ function signUp(){
                 userList.push(user);
                 localStorage.setItem('userList', JSON.stringify(userList));
                 exist.innerHTML = 'Success';
-                setTimeout(function (){location.replace("index.html");},2000);
+                setTimeout(function (){location.replace("index.html");},1500);
             }
         }
 }
